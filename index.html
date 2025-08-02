@@ -9,6 +9,7 @@
   <style>
     html {
       height: 100%;
+      background: linear-gradient(to bottom, #e8f1f9, #ffffff);
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -16,37 +17,27 @@
       padding: 0;
       background: transparent;
       color: #333;
-      position: relative;
-      min-height: 100vh;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, #e8f1f9, #ffffff);
-      z-index: -1;
     }
     header {
+      background-color: #ffffff;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #ddd;
       text-align: center;
-      padding: 100px 20px 50px 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-    header p {
-      font-size: 1.3rem;
+    .site-title {
+      font-size: 2.5rem;
       margin: 0;
+    }
+    .site-subtitle {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
     nav {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 20px;
     }
     nav a {
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
       color: #0061a8;
       font-weight: 600;
@@ -113,12 +104,14 @@
 </head>
 <body>
   <header>
-    <h1>Data by Lauren 🌺</h1>
-    <p>Clean tools for a clearer life — AI, productivity, and peace.</p>
+    <h1 class="site-title">Data by Lauren 🌺</h1>
+    <p class="site-subtitle">Clean tools for a clearer life — AI, productivity, and peace.</p>
     <nav>
+      <a href="index.html">Home</a>
       <a href="tools.html">AI Tools</a>
       <a href="portfolio.html">My Portfolio</a>
       <a href="garden.html">Lanai Garden</a>
+      <a href="mailto:lauren@example.com">Contact</a>
     </nav>
   </header>
 
@@ -150,11 +143,6 @@
       <h2>Lanai Garden & Propagation</h2>
       <p>Plant propagation tips, stories, and shop updates from my lanai garden.</p>
       <a href="garden.html">Visit the Garden →</a>
-    </div>
-    <div class="card">
-      <h2>Contact Me</h2>
-      <p>Have a project in mind or a question? I'm just an email away.</p>
-      <a href="mailto:lauren@example.com">Say Hello →</a>
     </div>
   </section>
 

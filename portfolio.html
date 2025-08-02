@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Data by Lauren</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fce8d5;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 50px 20px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0061a8;
+      font-weight: 600;
+    }
+
+    .summary {
+      text-align: center;
+      padding: 40px 20px 10px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #ccc;
+      transform: translateX(-2px);
+    }
+
+    .timeline-container {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-container.left {
+      left: 0;
+    }
+
+    .timeline-container.right {
+      left: 50%;
+    }
+
+    .timeline-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .timeline-container.left .timeline-box {
+      margin-right: 30px;
+      text-align: right;
+    }
+
+    .timeline-container.right .timeline-box {
+      margin-left: 30px;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: white;
+      border-top: 1px solid #ddd;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+
+      .timeline-container {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 20px;
+      }
+
+      .timeline-container.left,
+      .timeline-container.right {
+        left: 0;
+      }
+
+      .timeline-box {
+        margin: 0 0 20px 0;
+        text-align: left !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Data by Lauren 🌺</h1>
+    <p>Clean tools for a clearer life — AI, productivity, and peace.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">AI Tools</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="garden.html">Lanai Garden</a>
+      <a href="mailto:lauren@example.com">Contact</a>
+    </nav>
+  </header>
+
+  <section class="summary">
+    <h2>My Professional Journey</h2>
+    <p>
+      This timeline highlights key moments from my academic background, career milestones, and impactful projects.Scroll down to see my most recent experience.
+    </p>
+  </section>
+
+  <div class="timeline">
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Jan 2017</strong><br>
+        🤹 A new chapter unfolded—juggling family life and a growing love for making things easier and more efficient. From color-coded spreadsheets to tiny automations, I was always building clarity out of chaos. With a young family, I was learning to balance life and ambition.
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Aug 2018</strong><br>
+        📚 Returned to UTSA full-time, driven to break into tech. Explored everything from networking and digital forensics to systems administration and, ultimately, data analytics—the spark that lit the path forward.
+      </div>
+    </div>
+
+    
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Aug 2020</strong><br>
+        🎓 Graduated with my Bachelor of Business Administration in Management Information Systems from the University of Texas at San Antonio
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Aug 2020</strong><br>
+        💡  Encouraged by a professor to pursue the Master's in Data Analytics. With their support, I was accepted into the program—marking the beginning of my journey into data science.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Aug 2021</strong><br>
+        🎓 Graduated with my Master of Science in Data Analytics from the University of Texas at San Antonio
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Aug 2021</strong><br>
+        🏆 Honored with the Outstanding Non-Thesis Capstone Award and a $2,000 prize by the Alvarez College of Business at UTSA. My project tackled retail stockout detection using advanced object detection models, culminating in a side-by-side video comparison to showcase real-world model performance. It blended technical rigor with visual clarity—earning recognition from faculty and industry stakeholders alike.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Sep 2021</strong><br>
+        💡 While presenting my capstone, a stakeholder saw the potential and invited me to apply for a data role at their company, Limeade. That moment was a turning point—my first invitation into the industry, sparked by meaningful work and genuine connection.
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Sep 2021</strong><br>
+        💼 Contracted as a Data Analytics Tutor at UTSA’s Center of Professional Excellence. I supported Air Force personnel in mastering Python, SQL, and Tableau, guiding them through CSE 6040x: Intro to Computing for Data Analysis with clarity and confidence.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Nov 2021 - Mar 2022</strong><br>
+        💼 Brought on as an Administrative Assistant at E Controls, an engineering firm—but quickly saw room for transformation. I designed a mobile-friendly audit app that replaced outdated pen-and-paper workflows, cutting audit time in half and putting clean, accurate data directly into the hands of auditors. The role became so streamlined, the company hired a full-time analyst after my departure.
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Mar 2022 - Jan 2023</strong><br>
+        💼 Joined Limeade as a Data Scientist, hired by a stakeholder from my Capstone project. At this wellness-tech company, I worked to make the app more personalized and insightful for users—building hybrid recommendation engines, analyzing sessionalized user click behavior, and deploying solutions in Azure and Databricks environments.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Mar 2023</strong><br>
+        💡 Following company restructuring, I shifted into freelancing and community-driven events—where the spirit of <em>Data by Lauren</em> first took root. What began as a creative outlet quickly grew into a purposeful platform for building thoughtful, empowering tools.
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>May 2023</strong><br>
+        💡 Application <em>#352</em>. After eight months of refining my résumé, practicing interviews, and embracing rejection as part of the process, I applied to GEHAs Associate Data Scientist role in their Data Analytics department. Along the way, I kept building—retraining my object detection model, designing segmentation projects, and sharpening the skills that led me to meaningful work in healthcare data science.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Aug 2023 </strong><br>
+        💼 Hired as a Data Science Instructor at Codeup, where I taught recent grads and local veterans how to build real-world data science skills. I designed and delivered 2-hour live lectures on topics ranging from algorithms to anomaly detection, SQL to NLP, and data storytelling to job interviews. This role sharpened my ability to translate complex topics into clear, tailored messages—preparing me to consult confidently with stakeholders and adapt to diverse learning styles in fast-paced environments.
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="timeline-box">
+        <strong>Nov 2023</strong><br>
+        💡 Codeup announced they were officially closing their doors. I was proud to have been part of such a transformative program, helping students from all walks of life launch their careers in tech. The experience deepened my passion for teaching and mentoring, and I look forward to continuing that work in new ways.
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="timeline-box">
+        <strong>Nov 2023 - Present</strong><br>
+        💼  Right as one chapter closed, another opened. I stepped into my role as Associate Data Scientist at GEHA, where I bring clarity and structure to complex healthcare data. From building ARIMA forecasting models to deploying machine learning solutions in Azure ML Studio and Snowflake, the timing felt aligned—proof that preparation and passion make space for new growth.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 Data by Lauren · Built with aloha 🌿
+  </footer>
+
+</body>
+</html>
