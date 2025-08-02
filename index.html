@@ -9,7 +9,6 @@
   <style>
     html {
       height: 100%;
-      background: linear-gradient(to bottom, #e8f1f9, #ffffff);
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -17,6 +16,18 @@
       padding: 0;
       background: transparent;
       color: #333;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #e8f1f9, #ffffff);
+      z-index: -1;
     }
     header {
       text-align: center;
@@ -124,28 +135,28 @@
     </p>
   </section>
 
-<section class="sections">
-  <div class="card">
-    <h2>AI Tools for Small Business</h2>
-    <p>Explore easy-to-use tools like the Roblox allowance tracker and workflow automations.</p>
-    <a href="tools.html">Learn More →</a>
-  </div>
-  <div class="card">
-    <h2>Interactive Portfolio</h2>
-    <p>See my projects in AI, automation, and data visualization. Includes live dashboards and demos.</p>
-    <a href="portfolio.html">View Projects →</a>
-  </div>
-  <div class="card">
-    <h2>Lanai Garden & Propagation</h2>
-    <p>Plant propagation tips, stories, and shop updates from my lanai garden.</p>
-    <a href="garden.html">Visit the Garden →</a>
-  </div>
-  <div class="card">
-    <h2>Contact Me</h2>
-    <p>Have a question, collaboration idea, or just want to say hi? Let’s connect.</p>
-    <a href="mailto:lauren@example.com">Email Lauren →</a>
-  </div>
-</section>
+  <section class="sections">
+    <div class="card">
+      <h2>AI Tools for Small Business</h2>
+      <p>Explore easy-to-use tools like the Roblox allowance tracker and workflow automations.</p>
+      <a href="tools.html">Learn More →</a>
+    </div>
+    <div class="card">
+      <h2>Interactive Portfolio</h2>
+      <p>See my projects in AI, automation, and data visualization. Includes live dashboards and demos.</p>
+      <a href="portfolio.html">View Projects →</a>
+    </div>
+    <div class="card">
+      <h2>Lanai Garden & Propagation</h2>
+      <p>Plant propagation tips, stories, and shop updates from my lanai garden.</p>
+      <a href="garden.html">Visit the Garden →</a>
+    </div>
+    <div class="card">
+      <h2>Contact Me</h2>
+      <p>Have a project in mind or a question? I'm just an email away.</p>
+      <a href="mailto:lauren@example.com">Say Hello →</a>
+    </div>
+  </section>
 
   <footer>
     © 2025 Data by Lauren · Built with aloha 🌿
