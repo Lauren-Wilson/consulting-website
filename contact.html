@@ -1,3 +1,4 @@
+
 <!-- =========================
    contact.html — Contact page (email)
    ========================= -->
@@ -9,16 +10,10 @@
   <title>Manai Analytics — Contact</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    main { max-width: 760px; margin: 0 auto; padding: 80px 24px; }
-    h1 { margin-bottom: 40px; }
+    main { max-width: 760px; }
     .contact-line { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; }
     .contact-item { flex: 1; }
-    label { display:block; font-weight:600; margin-bottom:8px; }
-    input, textarea { width:100%; padding:16px; border:1px solid #eaeaea; border-radius:10px; font:inherit; }
-    textarea { min-height:180px; resize:vertical; }
-    button { margin-top:24px; padding:14px 22px; border:1px solid #eaeaea; border-radius:10px; background:#fff; font:inherit; cursor:pointer; }
-    button:hover { border-color:#cfcfcf; }
-    .muted { color:#666; }
+    @media (min-width: 720px) { .contact-line { flex-direction: row; } }
   </style>
 </head>
 <body>
@@ -26,9 +21,9 @@
     <div class="brand">Manai Analytics</div>
     <nav aria-label="primary">
      <a href="about.html">About Us</a>
-      <a href="index.html">Pricing</a>
-      <a href="projects.html" aria-current="page">Projects</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
+      <a href="index.html" aria-current="page">Pricing</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </header>
 
@@ -36,7 +31,7 @@
     <h1>Contact</h1>
     <p class="muted">Have a question or a project in mind? Reach out below and I’ll get back to you shortly.</p>
 
-    <form id="contactForm">
+    <form id="contactForm" class="form">
       <div class="contact-line">
         <div class="contact-item">
           <label for="name">Name</label>
@@ -76,6 +71,7 @@
         return `mailto:${to}?${params.toString()}`;
       }
 
+      // Compose a mailto with form contents
       form.addEventListener('submit', function(ev){
         ev.preventDefault();
         const name = document.getElementById('name').value.trim();
@@ -86,6 +82,7 @@
         window.location.href = buildMailto(subject, body);
       });
 
+      // Direct email link
       direct.href = buildMailto('Website inquiry', '');
     })();
   </script>
