@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data by Lauren</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      height: 100%;
+      background: linear-gradient(to bottom, #e8f1f9, #ffffff);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      color: #333;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    .site-title {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .site-subtitle {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0061a8;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #004b84;
+    }
+    .about {
+      max-width: 800px;
+      margin: 60px auto 40px auto;
+      padding: 0 30px;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 30px 60px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0061a8;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .card a:hover {
+      border-bottom: 2px solid #0061a8;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #555;
+      background: transparent;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title">Data by Lauren 🌺</h1>
+    <p class="site-subtitle">Clean tools for a clearer life — AI, productivity, and peace.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">AI Tools</a>
+      <a href="portfolio.html">My Portfolio</a>
+      <a href="garden.html">Lanai Garden</a>
+      <a href="mailto:databylauren01@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>Insights with Aloha</h2>
+    <p>
+      I'm Lauren — a data scientist, creative technologist, and founder of <em>Data by Lauren</em>, where innovation meets intention.
+      I craft intelligent, elegant tools that help support small businesses, busy families, and large enterprises alike.
+      <br><br>
+      Whether you’re streamlining operations, exploring automation, or visualizing complex data, I create systems that bring clarity,
+      reduce friction, and make decision-making feel effortless.
+      <br><br>
+      Welcome to a corner of the web where every solution is crafted with care.
+    </p>
+  </section>
+
+  <section class="sections">
+    <div class="card">
+      <h2>AI Tools for Small Business</h2>
+      <p>Explore easy-to-use tools like the Roblox allowance tracker and workflow automations.</p>
+      <a href="tools.html">Learn More →</a>
+    </div>
+    <div class="card">
+      <h2>Interactive Portfolio</h2>
+      <p>See my projects in AI, automation, and data visualization. Includes live dashboards and demos.</p>
+      <a href="portfolio.html">View Projects →</a>
+    </div>
+    <div class="card">
+      <h2>Lanai Garden & Propagation</h2>
+      <p>Plant propagation tips, stories, and shop updates from my lanai garden.</p>
+      <a href="garden.html">Visit the Garden →</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Data by Lauren · Built with aloha 🌿
+  </footer>
+</body>
+</html>

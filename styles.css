@@ -1,0 +1,79 @@
+/* =========================
+   styles.css — shared minimal stylesheet
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #666666;
+  --line: #eaeaea;
+  --max: 860px;
+  --radius: 10px;
+  /* tier palette: progressively deeper, still soft blues */
+  --tier1: #eef6ff; /* lightest */
+  --tier2: #dceeff; /* medium-light */
+  --tier3: #c9e2ff; /* deepest (still soft) */
+}
+
+/* Reset (light) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+
+/* Layout */
+header, main, footer { max-width: var(--max); margin: 0 auto; padding: 24px; }
+header { display: flex; gap: 16px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { letter-spacing: .5px; font-weight: 600; }
+.muted { color: var(--muted); }
+
+/* Nav hovers (desktop only) */
+nav a { padding: 6px 8px; border-radius: 6px; text-decoration: none; }
+@media (hover:hover) and (pointer:fine) {
+  nav a { position: relative; }
+  nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: var(--ink); transition: width .18s ease; }
+  nav a:hover::after { width: 100%; }
+}
+
+/* Sections */
+.section-divider { border-top: 1px solid var(--line); margin: 60px 0; }
+
+/* Pricing cards */
+.tiers { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+@media (min-width: 720px) { .tiers { grid-template-columns: repeat(3, 1fr); } }
+.card { border: 1px solid var(--line); border-radius: var(--radius); padding: 0 20px 20px; transition: transform .18s ease, border-color .18s ease; background: #fff; }
+.card .bar { height: 10px; border-top-left-radius: var(--radius); border-top-right-radius: var(--radius); margin: 0 -20px 16px; }
+.card.tier1 .bar { background: var(--tier1); }
+.card.tier2 .bar { background: var(--tier2); }
+.card.tier3 .bar { background: var(--tier3); }
+.kicker { font-size: .9rem; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
+h1 { margin: 8px 0 6px; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.2; }
+h2 { margin: 0 0 18px; font-size: clamp(18px, 2.2vw, 22px); color: var(--muted); font-weight: 500; }
+h3 { margin: 6px 0 6px; }
+@media (hover:hover) and (pointer:fine) {
+  .card:hover { transform: scale(1.02); border-color: #dcdcdc; }
+  .card h3 { position: relative; }
+  .card h3::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--ink); transition: width .18s ease; }
+  .card:hover h3::after { width: 100%; }
+}
+
+/* Projects grid */
+.grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 24px; }
+@media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+.tile { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; transition: transform .18s ease, border-color .18s ease; }
+.tile .kicker { font-size: .85rem; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
+@media (hover:hover) and (pointer:fine) {
+  .tile:hover { transform: scale(1.02); border-color: #dcdcdc; }
+  .tile h2 { position: relative; }
+  .tile h2::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--ink); transition: width .18s ease; }
+  .tile:hover h2::after { width: 100%; }
+}
+
+/* About page */
+.about { padding-top: 8px; padding-bottom: 8px; }
+.tag { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); }
+.signature { margin-top: 24px; text-align: center; }
+.signature-name { font-family: 'Segoe Script','Lucida Handwriting','Brush Script MT',cursive; font-size: 34px; line-height: 1.1; }
+.signature-role { margin-top: 4px; letter-spacing: .02em; }
+
+footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 36px; }
