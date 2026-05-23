@@ -1,12 +1,15 @@
 const chatAnswers = {
   scientist:
-    "Lauren is a data scientist who connects technical modeling with practical business decisions. She likes clean systems, useful dashboards, and analysis that reduces uncertainty.",
-  projects:
-    "Her projects span forecasting, AI automation, inventory tracking, computer vision, A/B testing, and dashboard storytelling.",
+    "Lauren is a resourceful data scientist who focuses on understanding the fundamentals before chasing trends. She learns quickly, adapts fast, and enjoys turning messy, real-world problems into practical systems people can actually use. Her work blends analytics, experimentation, automation, and storytelling with a strong focus on business impact.",
+
   different:
-    "Lauren brings a builder's mindset. She does not just analyze data - she turns messy problems into tools, workflows, and stories people can use.",
+    "Lauren stands out because she combines technical depth with builder energy. She does not just create analyses — she creates tools, workflows, dashboards, documentation, and experiences around them. She is comfortable moving from business conversations to modeling, automation, deployment, and communication without losing sight of the actual problem being solved.",
+
   tools:
-    "Python, SQL, Azure ML, Streamlit, Google Sheets, Power BI, forecasting models, experimentation methods, and emerging AI tools."
+    "Lauren works primarily in Python, SQL, Azure ML, Streamlit, R Shiny, Power BI, and Google Cloud/Azure ecosystems. Her experience includes forecasting models, topic modeling, sentiment analysis, computer vision, experimentation frameworks, dashboard design, and AI workflow automation using modern LLM tools.",
+
+  projects:
+    "Lauren’s projects span multiple areas of applied data science. She built an R Shiny audit automation app that reduced audit time by over 50%, trained a YOLOv4 computer vision model to detect empty retail shelves, developed forecasting approaches using intervention analysis to mimic real-world events, and explored large-scale call center transcript analysis using topic modeling and sentiment analysis to uncover customer behavior patterns and operational insights."
 };
 
 let chatTypingTimer = null;
