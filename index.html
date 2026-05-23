@@ -1,154 +1,248 @@
-
-<!-- =========================
-   index.html — Pricing only (Landing)
-   ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eai Analytics — Pricing</title>
+  <title>Data by Lauren | Analytics, AI Tools, and Data Stories</title>
+  <meta name="description" content="Thoughtful data products, forecasting systems, AI workflows, and dashboards for clearer business decisions." />
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
-<body>
-  <header>
-    <div class="brand">Eai Analytics</div>
-    <nav aria-label="primary">
-      <a href="about.html">About Us</a>
-      <a href="index.html" aria-current="page">Pricing</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact Us</a>
+<body class="home">
+  <div id="mvp-checks" class="check-banner" hidden></div>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Data by Lauren home">Data by Lauren <span aria-hidden="true">✿</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
-  <main>
-  <h1>Clear, simple pricing.</h1>
-  <h2>
-    Practical AI systems and digital confidence coaching —
-    designed to meet you where you are.
-  </h2>
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-shape hero-shape-right" aria-hidden="true"></div>
+      <div class="hero-shape hero-shape-left" aria-hidden="true"></div>
 
-  <section style="margin-top:40px; margin-bottom:40px;">
-    <div class="kicker">Founding Client Opportunity</div>
-    <p class="muted">
-      I’m onboarding a limited number of founding partners at preferred early rates.
-      Founding clients receive priority scheduling and direct engagement in exchange
-      for a testimonial and brief feedback conversation.
-      <br><br>
-      Limited to first 5 engagements.
-    </p>
-  </section>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span aria-hidden="true">✨</span> Friendly analytics, AI tools, and decision-ready data stories</p>
+          <h1>A softer, smarter home for data work.</h1>
+          <p class="hero-text">I build thoughtful data products, forecasting systems, AI workflows, and dashboards that help people make clearer decisions.</p>
+          <div class="button-row">
+            <a class="button button-solid" href="#projects">Explore Projects <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#chatbot">Ask the Chatbot</a>
+          </div>
+        </div>
 
-  <section class="tiers" aria-label="consulting tiers">
+        <aside id="chatbot" class="chat-card reveal reveal-delay" aria-label="LaurenBot portfolio guide">
+          <div class="chat-card-header">
+            <div class="chat-avatar" aria-hidden="true">🌺</div>
+            <div>
+              <p class="chat-title">LaurenBot</p>
+              <p class="chat-subtitle">Ask me about Lauren</p>
+            </div>
+          </div>
+          <div class="chat-card-body">
+            <div class="chat-answer">
+              <p class="chat-label"><span aria-hidden="true">💬</span> Live portfolio guide</p>
+              <p id="chat-answer">Lauren is a data scientist who connects technical modeling with practical business decisions. She likes clean systems, useful dashboards, and analysis that reduces uncertainty.</p>
+            </div>
+            <div class="chat-options" aria-label="Chatbot questions">
+              <button type="button" data-chat="scientist">What kind of data scientist?</button>
+              <button type="button" data-chat="projects">Show projects</button>
+              <button type="button" data-chat="different">What makes her different?</button>
+              <button type="button" data-chat="tools">What tools does she use?</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <article class="card tier1">
-      <div class="bar"></div>
-      <div class="kicker">Foundation Sprint</div>
-      <h3>✨ Quick Win Implementation</h3>
-      <p class="muted">
-        A focused 4–8 hour engagement to solve one meaningful operational pain point.
-      </p>
+    <section id="projects" class="section-wrap projects-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Project Garden</p>
+          <h2>Choose a tile. Follow the story.</h2>
+        </div>
+        <p>Six project cards for the MVP. Swap in real case studies whenever you are ready.</p>
+      </div>
 
-      <ul class="highlights">
-        <li>Dashboard build or workflow automation</li>
-        <li>Light data cleanup & structure</li>
-        <li>Implementation walkthrough</li>
-        <li>Clear next-step roadmap</li>
-      </ul>
+      <div class="project-grid" aria-label="Featured projects">
+        <a class="project-tile" href="#project-ai-automation" data-project-tile>
+          <span class="project-icon" aria-hidden="true">🤖</span>
+          <span class="project-tag">Workflow Systems</span>
+          <strong>AI Automation</strong>
+          <span>Smart tools that reduce manual work and help teams move faster.</span>
+        </a>
+        <a class="project-tile" href="#project-forecasting" data-project-tile>
+          <span class="project-icon" aria-hidden="true">📈</span>
+          <span class="project-tag">Time Series</span>
+          <strong>Forecasting</strong>
+          <span>Forecasting pipelines that help leaders understand what may happen next.</span>
+        </a>
+        <a class="project-tile" href="#project-inventory-saas" data-project-tile>
+          <span class="project-icon" aria-hidden="true">🗂️</span>
+          <span class="project-tag">Product Build</span>
+          <strong>Inventory SaaS</strong>
+          <span>A mobile-friendly inventory tracker for event and venue businesses.</span>
+        </a>
+        <a class="project-tile" href="#project-computer-vision" data-project-tile>
+          <span class="project-icon" aria-hidden="true">👁️</span>
+          <span class="project-tag">Object Detection</span>
+          <strong>Computer Vision</strong>
+          <span>Shelf-space detection model trained to identify empty retail shelves.</span>
+        </a>
+        <a class="project-tile" href="#project-ab-testing" data-project-tile>
+          <span class="project-icon" aria-hidden="true">🧪</span>
+          <span class="project-tag">Experimentation</span>
+          <strong>A/B Testing</strong>
+          <span>Practical experimentation thinking for business and healthcare decisions.</span>
+        </a>
+        <a class="project-tile" href="#project-dashboards-storytelling" data-project-tile>
+          <span class="project-icon" aria-hidden="true">📊</span>
+          <span class="project-tag">Decision Support</span>
+          <strong>Dashboards &amp; Storytelling</strong>
+          <span>Dashboards and narratives that turn data into business clarity.</span>
+        </a>
+      </div>
+    </section>
 
-      <p> — Small Business (Founding Rate)</p>
-      <p> — Corporate</p>
+    <section class="section-wrap project-stories" aria-label="Project stories">
+      <article id="project-ai-automation" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">🤖</span>
+          <p class="project-tag">Workflow Systems</p>
+          <h3>AI Automation</h3>
+          <div class="tool-list"><span>Python</span><span>OpenAI</span><span>Streamlit</span><span>Slack</span><span>Google Sheets</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Small teams often lose time to repetitive coordination, intake, and follow-up tasks.</p></div>
+          <div><h4>What I built</h4><p>Designed lightweight AI workflow concepts for small businesses and community organizations.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Turns scattered requests into cleaner systems people can actually use.</p></div>
+        </div>
+      </article>
 
-      <p class="best-for">
-        <em>Best for:</em> First-time automation, spreadsheet cleanup, KPI visibility.
-      </p>
-    </article>
+      <article id="project-forecasting" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">📈</span>
+          <p class="project-tag">Time Series</p>
+          <h3>Forecasting</h3>
+          <div class="tool-list"><span>Python</span><span>Azure ML</span><span>ETS</span><span>SARIMAX</span><span>MLflow</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Business leaders need more than a chart. They need uncertainty, context, and decision-ready signals.</p></div>
+          <div><h4>What I built</h4><p>Built reusable forecasting patterns with model comparison, intervals, and monthly monitoring logic.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Improves planning by separating normal variation from meaningful change.</p></div>
+        </div>
+      </article>
 
-    <article class="card tier2">
-      <div class="bar"></div>
-      <div class="kicker">Strategic Build</div>
-      <h3>📈 Intelligent System Design</h3>
-      <p class="muted">
-        A 40 - 60 hour engagement delivered across 2–6 weeks to design and implement scalable AI-enabled systems.
-      </p>
+      <article id="project-inventory-saas" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">🗂️</span>
+          <p class="project-tag">Product Build</p>
+          <h3>Inventory SaaS</h3>
+          <div class="tool-list"><span>Streamlit</span><span>Google Sheets</span><span>Python</span><span>Pandas</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Inventory updates often live in messy spreadsheets, photos, and memory.</p></div>
+          <div><h4>What I built</h4><p>Created a Streamlit app with image-based item selection, usage logging, and admin dashboards.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Makes inventory easier to update in the moment and easier to analyze later.</p></div>
+        </div>
+      </article>
 
-      <ul class="highlights">
-        <li>Workflow & data audit</li>
-        <li>System architecture design</li>
-        <li>Predictive models or AI workflows</li>
-        <li>Deployment guidance & documentation</li>
-      </ul>
+      <article id="project-computer-vision" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">👁️</span>
+          <p class="project-tag">Object Detection</p>
+          <h3>Computer Vision</h3>
+          <div class="tool-list"><span>YOLO</span><span>Python</span><span>Flask</span><span>Computer Vision</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Out-of-stock shelves are costly, but manual detection is slow and inconsistent.</p></div>
+          <div><h4>What I built</h4><p>Trained a YOLO-based object detection model using crowdsourced images and deployed a demo app.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Reached strong detection performance across varied shelf types and visual conditions.</p></div>
+        </div>
+      </article>
 
-      <p> — Small Business (Founding Rate)</p>
-      <p> — Corporate</p>
+      <article id="project-ab-testing" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">🧪</span>
+          <p class="project-tag">Experimentation</p>
+          <h3>A/B Testing</h3>
+          <div class="tool-list"><span>Statistics</span><span>Experiment Design</span><span>Python</span><span>SQL</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Teams often want to test ideas but lack the structure to know what is measurable or valid.</p></div>
+          <div><h4>What I built</h4><p>Developed learning notes and frameworks for experiment design, metrics, and interpretation.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Helps teams ask sharper questions before investing in solutions.</p></div>
+        </div>
+      </article>
 
-      <p class="best-for">
-        <em>Best for:</em> Revenue forecasting, automation expansion, scalable reporting.
-      </p>
-    </article>
+      <article id="project-dashboards-storytelling" class="project-story" data-project-story>
+        <div class="story-title">
+          <span class="project-icon" aria-hidden="true">📊</span>
+          <p class="project-tag">Decision Support</p>
+          <h3>Dashboards &amp; Storytelling</h3>
+          <div class="tool-list"><span>Power BI</span><span>Tableau</span><span>Python</span><span>SQL</span></div>
+        </div>
+        <div class="story-copy">
+          <div><h4>Problem</h4><p>Many dashboards show numbers but fail to guide action.</p></div>
+          <div><h4>What I built</h4><p>Created reporting concepts with executive callouts, KPI context, and clean visual hierarchy.</p></div>
+          <div class="impact"><h4>Impact</h4><p>Makes insights easier to understand, trust, and act on.</p></div>
+        </div>
+      </article>
+    </section>
 
-    <article class="card tier3">
-      <div class="bar"></div>
-      <div class="kicker">Embedded Partnership</div>
-      <h3>🤝 Fractional AI Lead</h3>
-      <p class="muted">
-        Ongoing strategic support for organizations treating analytics as a growth driver.
-      </p>
+    <section id="timeline" class="section-wrap timeline-section">
+      <p class="section-kicker">Experience Timeline</p>
+      <h2>More than a resume.</h2>
+      <div class="timeline">
+        <article><span>Now</span><h3>Associate Data Scientist</h3><p class="timeline-company">Healthcare Analytics</p><p>Building forecasting, analytics, and decision-support tools in a complex data environment.</p></article>
+        <article><span>2025</span><h3>Founder / Builder</h3><p class="timeline-company">Data by Lauren</p><p>Creating AI productivity tools, portfolio projects, and practical analytics systems for small teams.</p></article>
+        <article><span>2024</span><h3>AI + Automation Explorer</h3><p class="timeline-company">Independent Projects</p><p>Experimenting with RAG, AI agents, workflow automation, and deployable data apps.</p></article>
+        <article><span>Capstone</span><h3>Computer Vision Researcher</h3><p class="timeline-company">Object Detection Project</p><p>Built a model to detect empty retail shelves and translated it into a working demo experience.</p></article>
+        <article><span>Earlier</span><h3>Operations + Analytics Thinker</h3><p class="timeline-company">Retail / Process Improvement</p><p>Used data, observation, and process design to reduce waste and make work easier for real people.</p></article>
+      </div>
+    </section>
 
-      <ul class="highlights">
-        <li>Monthly strategy sessions</li>
-        <li>Model oversight & iteration</li>
-        <li>Workflow expansion</li>
-        <li>Executive reporting & training</li>
-      </ul>
+    <section id="about" class="section-wrap about-panel">
+      <div class="about-band">
+        <div class="about-glow about-glow-right" aria-hidden="true"></div>
+        <div class="about-glow about-glow-left" aria-hidden="true"></div>
+        <div class="about-grid">
+          <div>
+            <p class="section-kicker">Who I Am</p>
+            <h2>Data scientist. Curious builder. Systems thinker. Storyteller.</h2>
+            <p>I like turning messy information into tools, stories, and systems that make work clearer. My sweet spot is where analytics, product thinking, and practical automation meet.</p>
+          </div>
+          <div class="about-focus">
+            <p>Previously connected to work across</p>
+            <div><span>Healthcare</span><span>Retail</span><span>AI Tools</span><span>Forecasting</span><span>Dashboards</span><span>Community Leadership</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p> — Small Business (Founding Rate)</p>
-      <p> — Corporate</p>
+    <section id="contact" class="section-wrap contact-section">
+      <h2>Let’s build something useful.</h2>
+      <p>Use this section for your email, LinkedIn, GitHub, resume, or a simple contact form link.</p>
+      <div class="contact-links">
+        <a href="#" aria-label="GitHub profile"><span aria-hidden="true">⌘</span>GitHub</a>
+        <a href="#" aria-label="LinkedIn profile"><span aria-hidden="true">in</span>LinkedIn</a>
+        <a href="mailto:databylauren01@gmail.com"><span aria-hidden="true">✉</span>Email</a>
+      </div>
+    </section>
+  </main>
 
-      <p class="best-for">
-        <em>Best for:</em> Scaling operations, multi-source data integration, advanced forecasting.
-      </p>
-    </article>
+  <div class="floating-duck" aria-hidden="true">🐥</div>
 
-  </section>
-
-  <section class="section-divider"></section>
-
-  <section>
-    <div class="kicker">Digital Confidence Coaching</div>
-    <h2>AI for Everyday Life</h2>
-    <p class="muted">
-      Designed for non-technical professionals and retirees who want to
-      use AI safely and confidently.
-    </p>
-
-    <div style="margin-top:30px; border:1px solid var(--line); border-radius: var(--radius); padding:24px;">
-      <h3>3-Session Digital Confidence Package</h3>
-
-      <ul class="highlights">
-        <li>Session 1 — AI Foundations & Safety</li>
-        <li>Session 2 — Everyday Practical Use</li>
-        <li>Session 3 — Prompt Skills & Personalization</li>
-        <li>AI Quick Start Guide & reusable prompt templates</li>
-      </ul>
-
-      <p> — Full 3-Session Package</p>
-      <p> Virtual | In-Person</p>
-
-      <p class="muted" style="margin-top:10px;">
-        If after 3 sessions you don't feel more confident using AI independently, your final session is free!
-      </p>
-    </div>
-  </section>
-
-</main>
-
-
-  <footer>
-    <small>© 2025 Eai Analytics</small>
+  <footer class="site-footer">
+    <small>© 2026 Data by Lauren</small>
   </footer>
 </body>
 </html>
-
-
-
