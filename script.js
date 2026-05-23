@@ -10,29 +10,45 @@ const chatAnswers = {
 };
 
 let chatTypingTimer = null;
+let chatStartTimer = null;
+let activeChatKey = "scientist";
 
-function typeAnswerByWord(element, text) {
-  if (!element) return;
-
+function stopTypingAnimation() {
   if (chatTypingTimer) {
     clearInterval(chatTypingTimer);
     chatTypingTimer = null;
   }
 
+  if (chatStartTimer) {
+    clearTimeout(chatStartTimer);
+    chatStartTimer = null;
+  }
+}
+
+function typeAnswerByWord(element, text) {
+  if (!element) return;
+
+  stopTypingAnimation();
+
   const words = text.trim().split(/\s+/);
   let index = 0;
   element.textContent = "";
+  element.dataset.typing = "true";
+  element.setAttribute("aria-busy", "true");
 
-  chatTypingTimer = setInterval(() => {
-    if (index >= words.length) {
-      clearInterval(chatTypingTimer);
-      chatTypingTimer = null;
-      return;
-    }
+  chatStartTimer = setTimeout(() => {
+    chatTypingTimer = setInterval(() => {
+      if (index >= words.length) {
+        stopTypingAnimation();
+        element.dataset.typing = "false";
+        element.setAttribute("aria-busy", "false");
+        return;
+      }
 
-    element.textContent += `${index ? " " : ""}${words[index]}`;
-    index += 1;
-  }, 65);
+      element.textContent += `${index ? " " : ""}${words[index]}`;
+      index += 1;
+    }, 120);
+  }, 180);
 }
 
 function setupChatbot() {
@@ -47,14 +63,19 @@ function setupChatbot() {
 
     button.addEventListener("click", () => {
       const key = button.dataset.chat;
+      if (key === activeChatKey) return;
+
       const nextAnswer = chatAnswers[key];
       if (!nextAnswer) return;
 
+      activeChatKey = key;
       buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
       button.setAttribute("aria-pressed", "true");
       typeAnswerByWord(answer, nextAnswer);
     });
   });
+
+  typeAnswerByWord(answer, chatAnswers[activeChatKey]);
 }
 
 // Smooth scroll animations and page interactions
