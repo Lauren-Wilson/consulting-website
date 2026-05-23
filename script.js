@@ -9,23 +9,30 @@ const chatAnswers = {
     "Python, SQL, Azure ML, Streamlit, Google Sheets, Power BI, forecasting models, experimentation methods, and emerging AI tools."
 };
 
-function runSelfChecks() {
-  const errors = [];
-  const projectTiles = document.querySelectorAll("[data-project-tile]");
-  const projectStories = document.querySelectorAll("[data-project-story]");
-  const chatButtons = document.querySelectorAll("[data-chat]");
-  const emailLink = document.querySelector('a[href^="mailto:"]');
+let chatTypingTimer = null;
 
-  if (projectTiles.length !== 6) errors.push("Expected exactly 6 project tiles.");
-  if (projectStories.length !== 6) errors.push("Expected exactly 6 project detail sections.");
-  if (chatButtons.length !== 4) errors.push("Expected exactly 4 chatbot buttons.");
-  if (!emailLink) errors.push("Email contact link should use a mailto href.");
+function typeAnswerByWord(element, text) {
+  if (!element) return;
 
-  Object.keys(chatAnswers).forEach((key) => {
-    if (!chatAnswers[key]) errors.push(`Missing chatbot answer for ${key}.`);
-  });
+  if (chatTypingTimer) {
+    clearInterval(chatTypingTimer);
+    chatTypingTimer = null;
+  }
 
-  return errors;
+  const words = text.trim().split(/\s+/);
+  let index = 0;
+  element.textContent = "";
+
+  chatTypingTimer = setInterval(() => {
+    if (index >= words.length) {
+      clearInterval(chatTypingTimer);
+      chatTypingTimer = null;
+      return;
+    }
+
+    element.textContent += `${index ? " " : ""}${words[index]}`;
+    index += 1;
+  }, 65);
 }
 
 function setupChatbot() {
@@ -35,29 +42,68 @@ function setupChatbot() {
   if (!answer || !buttons.length) return;
 
   buttons.forEach((button) => {
-    button.setAttribute("aria-pressed", button.dataset.chat === "scientist" ? "true" : "false");
+    const isDefault = button.dataset.chat === "scientist";
+    button.setAttribute("aria-pressed", isDefault ? "true" : "false");
 
     button.addEventListener("click", () => {
-      const nextAnswer = chatAnswers[button.dataset.chat];
+      const key = button.dataset.chat;
+      const nextAnswer = chatAnswers[key];
       if (!nextAnswer) return;
 
-      answer.textContent = nextAnswer;
       buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
       button.setAttribute("aria-pressed", "true");
+      typeAnswerByWord(answer, nextAnswer);
     });
   });
 }
 
-function showSelfChecks() {
-  const banner = document.getElementById("mvp-checks");
-  if (!banner) return;
+// Smooth scroll animations and page interactions
+function setupScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-  const errors = runSelfChecks();
-  if (!errors.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
 
-  banner.textContent = `MVP checks need attention: ${errors.join(" ")}`;
-  banner.hidden = false;
+  // Observe all elements with reveal class
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    observer.observe(el);
+  });
+
+  // Smooth scroll behavior
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    
+    const targetId = link.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 }
 
-setupChatbot();
-showSelfChecks();
+// Initialize animations when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setupScrollAnimations();
+    setupChatbot();
+  });
+} else {
+  setupScrollAnimations();
+  setupChatbot();
+}

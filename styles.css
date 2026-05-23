@@ -736,10 +736,6 @@ p {
 }
 
 @media (min-width: 720px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-  }
-
   .section-heading {
     grid-template-columns: 1fr auto;
     align-items: end;
@@ -759,6 +755,10 @@ p {
 }
 
 @media (min-width: 980px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  }
+
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
