@@ -16,9 +16,9 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Data by Lauren home">Data by Lauren <span aria-hidden="true">✿</span></a>
       <div class="nav-links">
-        <a href="#projects">Projects</a>
+        <a href="#top">Top</a>
+        <a href="#projects">Project Garden</a>
         <a href="#timeline">Timeline</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -173,12 +173,31 @@
           <strong>Inventory SaaS</strong>
           <span>A mobile-friendly inventory tracker for event and venue businesses.</span>
         </a>
-        <a class="project-tile" href="#project-computer-vision" data-project-tile>
+        <article
+          class="project-tile project-tile-feature"
+          data-project-tile
+          data-case-study-scroll="#computer-vision-case-study"
+          tabindex="0"
+          role="link"
+          aria-labelledby="computer-vision-tile-title"
+          aria-label="Computer Vision project tile. Click or press Enter to jump to the Retail Shelf Stockout Detection case study."
+        >
           <span class="project-icon" aria-hidden="true">👁️</span>
           <span class="project-tag">Object Detection</span>
-          <strong>Computer Vision</strong>
+          <strong id="computer-vision-tile-title">Computer Vision</strong>
           <span>Shelf-space detection model trained to identify empty retail shelves.</span>
-        </a>
+          <div class="project-tile-actions">
+            <a
+              class="button button-solid button-sm"
+              href="https://your-streamlit-demo-url.streamlit.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cv-demo-link
+              aria-label="Try the live Retail Shelf Stockout Detection demo in a new tab"
+            >Try Live Demo</a>
+            <a class="button button-outline button-sm" href="#computer-vision-case-study" aria-label="Read the Retail Shelf Stockout Detection case study">Details</a>
+          </div>
+        </article>
         <a class="project-tile" href="#project-ab-testing" data-project-tile>
           <span class="project-icon" aria-hidden="true">🧪</span>
           <span class="project-tag">Experimentation</span>
@@ -280,7 +299,169 @@
       </article>
     </section>
 
+    <section id="computer-vision-case-study" class="section-wrap cv-case-study-section" aria-labelledby="cv-case-study-title">
+      <article class="cv-case-study-card">
+        <header class="cv-case-study-hero">
+          <p class="section-kicker">Computer Vision Project</p>
+          <h2 id="cv-case-study-title">Retail Shelf Stockout Detection</h2>
+             <div class="tool-list cv-badge-list" aria-label="Tools and methods used">
+            <span>YOLOv4</span>
+            <span>LabelImg</span>
+            <span>YOLO Labels</span>
+            <span>Streamlit Cloud</span>
+            <span>Applied Computer Vision</span>
+          </div>
+          <br>
+          <p class="cv-subtitle">During her Master's program at UTSA, Lauren led a 12-person team in developing an award-winning computer vision system 
+            capable of detecting empty shelf space in retail stores using YOLOv4 object detection. From coordinating data collection and managing image 
+            annotation to training models and presenting results, she oversaw the project from concept to deployment. The project received UTSA's Outstanding 
+            Project Non-Thesis Award and now serves as an example of how machine learning can transform a common business problem into an actionable, scalable 
+            solution. Explore the case study, model artifacts, comparison results, and live demo to see the project in action.  
+          </p>
+        
+
+          <ul class="cv-highlight-list" aria-label="Retail Shelf Stockout Detection project highlights">
+            <li>🏆 Outstanding Project Non-Thesis Award</li>
+            <li>👥 Led a 12-Person Team</li>
+            <li>🖼️ Thousands of Manually Annotated Images</li>
+            <li>🎯 Custom YOLOv4 Object Detection Model</li>
+            <li>🛒 Real Retail Shelf Data</li>
+            <li>🚀 Live Inference Demo Available</li>
+          </ul>
+          
+         
+          <div class="button-row">
+            <a
+              class="button button-solid"
+              href="https://your-streamlit-demo-url.streamlit.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cv-demo-link
+              aria-label="Open the live Streamlit demo in a new tab"
+            >Try Live Demo</a>
+            <a class="button button-outline" href="#cv-workflow" aria-label="Jump to technical workflow steps">View Technical Workflow</a>
+          </div>
+        </header>
+
+        <section class="cv-content-block" aria-labelledby="cv-quick-stats-title">
+          <h3 id="cv-quick-stats-title">Quick Stats</h3>
+          <div class="cv-stats-grid" role="list" aria-label="Retail Shelf Stockout Detection quick stats">
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Model</p><p class="cv-stat-value">YOLOv4</p></article>
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Annotation Tool</p><p class="cv-stat-value">LabelImg</p></article>
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Label Format</p><p class="cv-stat-value">YOLO</p></article>
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Class</p><p class="cv-stat-value">EMPTY</p></article>
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Deployment</p><p class="cv-stat-value">Streamlit Cloud</p></article>
+            <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Project Type</p><p class="cv-stat-value">Applied Computer Vision</p></article>
+          </div>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-problem-title">
+          <h3 id="cv-problem-title">Problem</h3>
+          <p>Retail teams need a faster and more consistent way to identify empty shelf space across store environments. Stockouts can be visually subtle, vary by product type, and are difficult to track manually at scale.</p>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-approach-title">
+          <h3 id="cv-approach-title">Approach</h3>
+          <p>This project used a custom YOLOv4 object detection workflow trained on manually annotated retail shelf images. The goal was to detect regions of empty shelf space across varied product categories, shelf layouts, and lighting conditions.</p>
+        </section>
+
+        <section id="cv-workflow" class="cv-content-block" aria-labelledby="cv-workflow-title">
+          <h3 id="cv-workflow-title">Workflow</h3>
+          <ol class="cv-stepper" aria-label="Retail shelf stockout detection workflow steps">
+            <li>Image Collection</li>
+            <li>Manual Annotation with LabelImg</li>
+            <li>YOLO Label Export</li>
+            <li>Train / Validation Split</li>
+            <li>YOLOv4 Model Training</li>
+            <li>Model Comparison</li>
+            <li>Streamlit Inference Demo</li>
+          </ol>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-video-title">
+          <h3 id="cv-video-title">Demo Video</h3>
+          <article class="cv-media-card">
+            <h4>Model Comparison Demo</h4>
+            <video class="cv-video" controls preload="metadata" aria-label="Model comparison video demonstrating shelf stockout detection results">
+              <source data-cv-video src="/videos/model-comparison-final.mp4" type="video/mp4" />
+              Your browser does not support embedded video playback.
+            </video>
+            <p>Archived model comparison video from the original project.</p>
+          </article>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-live-demo-title">
+          <h3 id="cv-live-demo-title">Live Demo</h3>
+          <article class="cv-live-demo-card">
+            <p>The live Streamlit app loads preserved model artifacts and runs inference on selected or uploaded shelf images. No retraining occurs in the demo.</p>
+            <a
+              class="button button-solid"
+              href="https://your-streamlit-demo-url.streamlit.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cv-demo-link
+              aria-label="Try the live detection Streamlit app in a new tab"
+            >Try the Live Detection App <span aria-hidden="true">→</span></a>
+          </article>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-results-title">
+          <h3 id="cv-results-title">Results / Impact</h3>
+          <ul class="cv-list">
+            <li>Detected empty shelf regions across varied retail shelf layouts</li>
+            <li>Demonstrated object detection on visually noisy, real-world shelf images</li>
+            <li>Compared YOLO-based approaches during experimentation</li>
+            <li>Built an interactive inference experience for portfolio demonstration</li>
+            <li>Project received recognition as an award-winning capstone project</li>
+          </ul>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-improvements-title">
+          <h3 id="cv-improvements-title">What I Would Improve Today</h3>
+          <ul class="cv-list">
+            <li>Add formal experiment tracking with MLflow or similar tooling</li>
+            <li>Preserve complete training metadata and dataset versioning</li>
+            <li>Add precision, recall, mAP, and confusion matrix reporting</li>
+            <li>Improve annotation QA and labeling guidelines</li>
+            <li>Compare modern YOLO versions under a reproducible pipeline</li>
+            <li>Package model artifacts with a more production-ready deployment strategy</li>
+          </ul>
+        </section>
+
+        <section class="cv-content-block" aria-labelledby="cv-artifacts-title">
+          <h3 id="cv-artifacts-title">Project Artifacts</h3>
+          <div class="cv-artifact-grid" role="list" aria-label="Project artifact links">
+            <a class="cv-artifact-card" data-cv-demo-link href="https://your-streamlit-demo-url.streamlit.app" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Open Streamlit demo in a new tab">
+              <strong>Streamlit Demo</strong>
+              <span>Interactive shelf stockout inference app</span>
+            </a>
+            <a class="cv-artifact-card" data-cv-repo-link href="#" role="listitem" aria-label="Open project GitHub repository placeholder link">
+              <strong>GitHub Repo</strong>
+              <span>Model code, app logic, and docs</span>
+            </a>
+            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open training notebook placeholder link">
+              <strong>Training Notebook</strong>
+              <span>Exploration and training workflow notes</span>
+            </a>
+            <a class="cv-artifact-card" data-cv-video-link href="/videos/model-comparison-final.mp4" role="listitem" aria-label="Open model comparison video placeholder link">
+              <strong>Model Comparison Video</strong>
+              <span>Archived results from experimentation</span>
+            </a>
+            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open sample images placeholder link">
+              <strong>Sample Images</strong>
+              <span>Representative shelf images used for testing</span>
+            </a>
+            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open case study writeup placeholder link">
+              <strong>Case Study Writeup</strong>
+              <span>Detailed narrative and technical summary</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </section>
+
     <section id="timeline" class="section-wrap timeline-section">
+      <div id="resume" class="section-anchor" aria-hidden="true"></div>
       <p class="section-kicker">Experience Timeline</p>
       <h2>More than a resume.</h2>
       <div class="timeline">
@@ -407,7 +588,7 @@
 
   <div class="floating-duck" aria-hidden="true">🐥</div>
 
-  <footer class="site-footer">
+  <footer id="bottom" class="site-footer">
     <small>© 2026 Data by Lauren</small>
   </footer>
 </body>

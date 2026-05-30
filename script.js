@@ -1,3 +1,7 @@
+const COMPUTER_VISION_DEMO_URL = "https://your-streamlit-demo-url.streamlit.app";
+const COMPUTER_VISION_REPO_URL = "#";
+const COMPUTER_VISION_VIDEO_SRC = "/videos/model-comparison-final.mp4";
+
 const chatAnswers = {
   scientist:
     "Lauren is a resourceful data scientist who focuses on understanding the fundamentals before chasing trends. She learns quickly, adapts fast, and enjoys turning messy, real-world problems into practical systems people can actually use. Her work blends analytics, experimentation, automation, and storytelling with a strong focus on business impact.",
@@ -81,6 +85,52 @@ function setupChatbot() {
   typeAnswerByWord(answer, chatAnswers[activeChatKey]);
 }
 
+function setupComputerVisionCaseStudyLinks() {
+  const demoLinks = document.querySelectorAll("[data-cv-demo-link]");
+  const repoLinks = document.querySelectorAll("[data-cv-repo-link]");
+  const videoSources = document.querySelectorAll("[data-cv-video]");
+  const videoLinks = document.querySelectorAll("[data-cv-video-link]");
+
+  demoLinks.forEach((link) => {
+    link.setAttribute("href", COMPUTER_VISION_DEMO_URL);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+
+  repoLinks.forEach((link) => {
+    link.setAttribute("href", COMPUTER_VISION_REPO_URL);
+  });
+
+  videoSources.forEach((source) => {
+    source.setAttribute("src", COMPUTER_VISION_VIDEO_SRC);
+  });
+
+  videoLinks.forEach((link) => {
+    link.setAttribute("href", COMPUTER_VISION_VIDEO_SRC);
+  });
+
+  const caseStudyTiles = document.querySelectorAll("[data-case-study-scroll]");
+  caseStudyTiles.forEach((tile) => {
+    const targetSelector = tile.getAttribute("data-case-study-scroll");
+    if (!targetSelector) return;
+
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    tile.addEventListener("click", (event) => {
+      if (event.target.closest("a, button")) return;
+      target.scrollIntoView({ behavior: "smooth" });
+    });
+
+    tile.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (event.target.closest("a, button")) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
+
 // Smooth scroll animations and page interactions
 function setupScrollAnimations() {
   const observerOptions = {
@@ -126,8 +176,10 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     setupScrollAnimations();
     setupChatbot();
+    setupComputerVisionCaseStudyLinks();
   });
 } else {
   setupScrollAnimations();
   setupChatbot();
+  setupComputerVisionCaseStudyLinks();
 }
