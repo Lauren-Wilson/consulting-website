@@ -189,7 +189,7 @@
           <div class="project-tile-actions">
             <a
               class="button button-solid button-sm"
-              href="https://your-streamlit-demo-url.streamlit.app"
+              href="https://computer-vision-stockout.streamlit.app/"
               target="_blank"
               rel="noopener noreferrer"
               data-cv-demo-link
@@ -310,6 +310,13 @@
             <span>YOLO Labels</span>
             <span>Streamlit Cloud</span>
             <span>Applied Computer Vision</span>
+            <a
+              href="https://computer-vision-stockout.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cv-demo-link
+              aria-label="Try live demo in a new tab"
+            >Try Live Demo</a>
           </div>
           <br>
           <p class="cv-subtitle">During her Master's program at UTSA, Lauren led a 12-person team in developing an award-winning computer vision system 
@@ -329,19 +336,6 @@
             <li>🚀 Live Inference Demo Available</li>
           </ul>
           
-         
-          <div class="button-row">
-            <a
-              class="button button-solid"
-              href="https://your-streamlit-demo-url.streamlit.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cv-demo-link
-              aria-label="Open the live Streamlit demo in a new tab"
-            >Try Live Demo</a>
-            <a class="button button-outline" href="#cv-workflow" aria-label="Jump to technical workflow steps">View Technical Workflow</a>
-          </div>
-        </header>
 
         <section class="cv-content-block" aria-labelledby="cv-quick-stats-title">
           <h3 id="cv-quick-stats-title">Quick Stats</h3>
@@ -354,36 +348,19 @@
             <article class="cv-stat-card" role="listitem"><p class="cv-stat-label">Project Type</p><p class="cv-stat-value">Applied Computer Vision</p></article>
           </div>
         </section>
+         
+          
+        </header>
 
-        <section class="cv-content-block" aria-labelledby="cv-problem-title">
-          <h3 id="cv-problem-title">Problem</h3>
-          <p>Retail teams need a faster and more consistent way to identify empty shelf space across store environments. Stockouts can be visually subtle, vary by product type, and are difficult to track manually at scale.</p>
-        </section>
+    
 
-        <section class="cv-content-block" aria-labelledby="cv-approach-title">
-          <h3 id="cv-approach-title">Approach</h3>
-          <p>This project used a custom YOLOv4 object detection workflow trained on manually annotated retail shelf images. The goal was to detect regions of empty shelf space across varied product categories, shelf layouts, and lighting conditions.</p>
-        </section>
-
-        <section id="cv-workflow" class="cv-content-block" aria-labelledby="cv-workflow-title">
-          <h3 id="cv-workflow-title">Workflow</h3>
-          <ol class="cv-stepper" aria-label="Retail shelf stockout detection workflow steps">
-            <li>Image Collection</li>
-            <li>Manual Annotation with LabelImg</li>
-            <li>YOLO Label Export</li>
-            <li>Train / Validation Split</li>
-            <li>YOLOv4 Model Training</li>
-            <li>Model Comparison</li>
-            <li>Streamlit Inference Demo</li>
-          </ol>
-        </section>
 
         <section class="cv-content-block" aria-labelledby="cv-video-title">
           <h3 id="cv-video-title">Demo Video</h3>
           <article class="cv-media-card">
             <h4>Model Comparison Demo</h4>
             <video class="cv-video" controls preload="metadata" aria-label="Model comparison video demonstrating shelf stockout detection results">
-              <source data-cv-video src="/videos/model-comparison-final.mp4" type="video/mp4" />
+              <source data-cv-video src="videos/BEST_MODEL_comparision_cut.mp4" type="video/mp4" />
               Your browser does not support embedded video playback.
             </video>
             <p>Archived model comparison video from the original project.</p>
@@ -412,7 +389,7 @@
             <li>Demonstrated object detection on visually noisy, real-world shelf images</li>
             <li>Compared YOLO-based approaches during experimentation</li>
             <li>Built an interactive inference experience for portfolio demonstration</li>
-            <li>Project received recognition as an award-winning capstone project</li>
+            <li>Awarded the Outstanding Project Non-Thesis Award from the University of Texas at San Antonio plus a $2,000 stipend for her leadership, accuracy, and innovation during this time-critical project</li>
           </ul>
         </section>
 
@@ -428,35 +405,6 @@
           </ul>
         </section>
 
-        <section class="cv-content-block" aria-labelledby="cv-artifacts-title">
-          <h3 id="cv-artifacts-title">Project Artifacts</h3>
-          <div class="cv-artifact-grid" role="list" aria-label="Project artifact links">
-            <a class="cv-artifact-card" data-cv-demo-link href="https://your-streamlit-demo-url.streamlit.app" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Open Streamlit demo in a new tab">
-              <strong>Streamlit Demo</strong>
-              <span>Interactive shelf stockout inference app</span>
-            </a>
-            <a class="cv-artifact-card" data-cv-repo-link href="#" role="listitem" aria-label="Open project GitHub repository placeholder link">
-              <strong>GitHub Repo</strong>
-              <span>Model code, app logic, and docs</span>
-            </a>
-            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open training notebook placeholder link">
-              <strong>Training Notebook</strong>
-              <span>Exploration and training workflow notes</span>
-            </a>
-            <a class="cv-artifact-card" data-cv-video-link href="/videos/model-comparison-final.mp4" role="listitem" aria-label="Open model comparison video placeholder link">
-              <strong>Model Comparison Video</strong>
-              <span>Archived results from experimentation</span>
-            </a>
-            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open sample images placeholder link">
-              <strong>Sample Images</strong>
-              <span>Representative shelf images used for testing</span>
-            </a>
-            <a class="cv-artifact-card" href="#" role="listitem" aria-label="Open case study writeup placeholder link">
-              <strong>Case Study Writeup</strong>
-              <span>Detailed narrative and technical summary</span>
-            </a>
-          </div>
-        </section>
       </article>
     </section>
 
