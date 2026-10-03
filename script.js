@@ -1,6 +1,5 @@
 const COMPUTER_VISION_DEMO_URL = "https://computer-vision-stockout.streamlit.app/";
 const COMPUTER_VISION_REPO_URL = "#";
-const COMPUTER_VISION_VIDEO_SRC = "videos/BEST_MODEL_comparision_cut.mp4";
 
 const chatAnswers = {
   scientist:
@@ -88,9 +87,6 @@ function setupChatbot() {
 function setupComputerVisionCaseStudyLinks() {
   const demoLinks = document.querySelectorAll("[data-cv-demo-link]");
   const repoLinks = document.querySelectorAll("[data-cv-repo-link]");
-  const videoElements = document.querySelectorAll(".cv-video");
-  const videoSources = document.querySelectorAll("[data-cv-video]");
-  const videoLinks = document.querySelectorAll("[data-cv-video-link]");
 
   demoLinks.forEach((link) => {
     link.setAttribute("href", COMPUTER_VISION_DEMO_URL);
@@ -100,18 +96,6 @@ function setupComputerVisionCaseStudyLinks() {
 
   repoLinks.forEach((link) => {
     link.setAttribute("href", COMPUTER_VISION_REPO_URL);
-  });
-
-  videoSources.forEach((source) => {
-    source.setAttribute("src", COMPUTER_VISION_VIDEO_SRC);
-  });
-
-  videoElements.forEach((video) => {
-    video.load();
-  });
-
-  videoLinks.forEach((link) => {
-    link.setAttribute("href", COMPUTER_VISION_VIDEO_SRC);
   });
 
   const caseStudyTiles = document.querySelectorAll("[data-case-study-scroll]");
